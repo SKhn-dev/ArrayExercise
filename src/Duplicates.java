@@ -6,8 +6,7 @@ public class Duplicates {
         // finding and printing the duplicate values
         int[] Array1=new int[20]; //create two arrays to store 20 values
         int[] Array2=new int[20];
-        int[] duplicateNumbers=new int[40];
-        int duplicateValue; //variable to hold duplicate value
+        int[] duplicateNumbers=new int[40]; //Array to hold duplicate values
         Random rand=new Random();  //rand to generate random numbers
         for(int i=0;i<Array1.length;i++){
             Array1[i]= rand.nextInt(19)+1;//Assign random values to Array1 and Arrays
@@ -15,27 +14,26 @@ public class Duplicates {
         }
         //Printing Arrays
         System.out.println("Array1 values: ");
-        for(int i=0;i<Array1.length;i++)
-            System.out.print(Array1[i]+" ");
+        for (int i1 : Array1) System.out.print(i1 + " ");
         System.out.println("\nArray2 values: ");
         int k=0;
-        for(int j=0;j<Array2.length;j++)
-            System.out.print(Array2[j]+" ");
+        for (int element : Array2)
+            System.out.print(element + " ");
         boolean duplicateFlag=false; //variable to indicate if there is any duplicate value or not
         System.out.println("\nDuplicate Values");
-        for(int i=0;i<Array1.length;i++) {
-            for (int j = 0; j<Array2.length;j++) {
-                if (Array1[i] == Array2[j]) { //check if the value exists in both arrays
-                    duplicateNumbers[k++]=Array1[i];
+        for (int item : Array1) {
+            for (int value : Array2) {
+                if (item == value) { //check if the value exists in both arrays
+                    duplicateNumbers[k++] = item;
                     duplicateFlag = true;
-                    System.out.print(Array1[i] + " "); //Printing all instances of duplicate numbers
+                    System.out.print(item + " "); //Printing all instances of duplicate numbers
                 }
             }
 
         }
         int j=0;
 
-        if(duplicateFlag==false)
+        if(!duplicateFlag)
             System.out.println("\nNo duplicate value");
 
         else{
@@ -53,8 +51,6 @@ public class Duplicates {
         //Display after removing multiple occurrences
         System.out.println("\nArray of duplicated numbers after removing multiple occurrences: ");
         for(int i=1;i<j;i++){
-
-
             System.out.print(duplicateNumbers[i]+ " ");
         }
     }
