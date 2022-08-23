@@ -23,7 +23,8 @@ public class MaxAndMin {
                 max=myArray[i];
 
         }
-        System.out.println("\nMinimum number in array: "+min);  //print the results
+        //print the results
+        System.out.println("\nMinimum number in array: "+min);
         System.out.println("Maximum number in array: "+max);
 
     }
